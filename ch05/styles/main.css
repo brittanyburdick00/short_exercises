@@ -49,8 +49,8 @@ blockquote {
     margin: 0;
 }
 ul {
-    margin: 0;
-    padding: 0 .5em;
+    margin: 0 0.5em;
+    padding: 0 0.5em;
 }
 li {
     padding: .1em;
