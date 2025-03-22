@@ -1,4 +1,71 @@
+/* custom property */
+:root {
+    --primary-color: aliceblue;
+    --secondary-color: rebeccapurple;
+    --third-color: white;
+}
+
+html {
+    background-color: var(--primary-color);
+}
 body {
+    background-color: var(--third-color);
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
+    width: 90%;
+    margin: auto;
+    border: 12px double var(--secondary-color);
+    padding: 0;
+}
+main {
+    padding: 1em;
+}
+footer {
+    border-top: 3px solid var(--secondary-color);
+    padding: 5px
+}
+h1 {
+    font-size: 150%;
+    color: var(--secondary-color);
+    padding-top: 0;
+    margin: 0;
+}
+h2 {
+    font-size: 125%;
+    padding-top: 1em;
+    margin: 0;
+}
+h3 {
+    font-size: 115%;
+    padding-top: 1em;
+    margin-top: 0;
+}
+p {
+    margin-bottom: 5px;
+}
+blockquote {
+    margin: .3em 0;
+}
+ul {
+    margin: .5em;
+    padding: 0 .5em;
+}
+li {
+    padding: .15em;
+}
+cite {
+    color: var(--secondary-color);
+    font-style: normal;
+    font-weight: bold;
+}
+img {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+footer p {
+    font-size: 90%;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
 }
