@@ -72,8 +72,8 @@ article {
 	& img {
 		border: 1px solid var(--dark);
 		float: left;
-		padding-right: 1em;
-		padding-bottom: 1em;
+		margin-right: 1em;
+		margin-bottom: 1em;
 	}
 }
 
