@@ -57,6 +57,7 @@ header {
 main {
 	clear: left;
 	display: flex;
+	flex-wrap: wrap;
 }
 /* the styles for the aside */
 aside {
