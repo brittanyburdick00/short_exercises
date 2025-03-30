@@ -62,6 +62,7 @@ main {
 /* the styles for the aside */
 aside {
 	flex-basis: 25%;
+	order: -1;
 	& h2 {
 		color: var(--primary-color);
 	}
