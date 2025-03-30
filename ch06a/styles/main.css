@@ -84,7 +84,7 @@ article {
 		border: 1px solid var(--dark);
 		float: left;
 		margin-right: 1em;
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
 	}
 }
 
