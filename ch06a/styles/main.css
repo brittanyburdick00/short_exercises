@@ -58,6 +58,16 @@ main {
 	clear: left;
 	display: flex;
 }
+/* the styles for the aside */
+aside {
+	flex-basis: 25%;
+	& h2 {
+		color: var(--primary-color);
+	}
+	& img {
+		margin-bottom: .9em;
+	}
+}
 
 /* the styles for the section */
 section {
@@ -77,16 +87,7 @@ article {
 	}
 }
 
-/* the styles for the aside */
-aside {
-	flex-basis: 25%;
-	& h2 {
-		color: var(--primary-color);
-	}
-	& img {
-		margin-bottom: .9em;
-	}
-}
+
 
 /* the styles for the footer */
 footer {
