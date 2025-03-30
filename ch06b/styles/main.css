@@ -60,10 +60,13 @@ header {
 /* the styles for the main element */
 main {
 	clear: left;
+	display: flex;
 }
 
 /* the styles for the section */
 section {
+	flex-basis: 50%;
+	order: 2;
 	& h1 {
 		padding-top: .5em;
 	}
@@ -96,6 +99,7 @@ article {
 
 /* the styles for the aside */
 aside {
+	flex-basis: 25%;
 	& h2 {
 		color: var(--primary-color);
 	}
