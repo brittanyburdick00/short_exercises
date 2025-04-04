@@ -110,7 +110,7 @@ nav {
 		color: var(--accent-color);
 		background-color: var(--primary-color);
 	}
-	& li.current a {
+	& li.current {
 		background-color: var(--accent-color);
 		color: var(--dark);
 		pointer-events: none;
