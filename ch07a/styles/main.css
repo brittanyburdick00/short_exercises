@@ -91,6 +91,32 @@ aside {
 		margin-bottom: .9em;
 	}
 }
+/* the styles for the navigation bar */
+nav {
+	background-color: var(--primary-color);
+	& ul {
+		list-style-type: none;
+	}
+	& li {
+		padding: 0.5em;
+	}
+	& a {
+		display: block;
+		text-decoration: none;
+		color: var(--light);
+		font-weight: bold;
+	}
+	& a:hover {
+		background-color: var(--accent-color);
+	}
+	& a.current {
+		color: var(--dark);
+		pointer-events: none;
+	}
+	& a.current:hover {
+		color: var(--dark);
+	}
+}
 
 /* the styles for the footer */
 footer {
