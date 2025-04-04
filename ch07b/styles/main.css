@@ -55,6 +55,69 @@ header {
 	}
 }
 
+/* styles for the navigation bar */
+nav.navbar {
+	background-color: var(--primary-color);
+	& a {
+		display: block;
+		padding: 1em;
+		color: var(--light);
+		text-decoration: none;
+		margin-top: 0;
+		margin-left: 1px;
+		margin-right: 1px;
+		margin-bottom: 2px;
+	}
+	& a:hover, a:focus, a.current {
+		background-color: var(--primary-color);
+		color: var(--light);
+	}
+	& ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+}
+ul.menu {
+	display: flex;
+	flex-wrap: wrap;
+	& li {
+		flex-basis: 20%;
+		text-align: center;
+	}
+	& li:has(.submenu) {
+		position: relative;
+	}
+	& > a small {
+		margin-left: 6px;
+	}
+	& :hover > .submenu {
+		display: block;
+	}
+	& > li:first-child a {
+		margin-left: 0;
+	}
+	
+	& > li:last-child a {
+		margin-right: 0;
+	}
+}
+ul.submenu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	background-color: var(--primary-color);
+	color: var(--light);
+	display: none;
+
+	& > li a {
+		margin: 0 2px 2px;
+	}
+
+}
+
+
 /* the styles for the main element */
 main {
 	clear: left;
