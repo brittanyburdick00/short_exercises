@@ -110,12 +110,12 @@ nav {
 		color: var(--accent-color);
 		background-color: var(--primary-color);
 	}
-	& a.current {
+	& li.current a {
 		background-color: var(--accent-color);
 		color: var(--dark);
 		pointer-events: none;
 	}
-	& a.current:hover {
+	& li.current a:hover {
 		background-color: var(--accent-color);
 		color: var(--dark);
 	}
