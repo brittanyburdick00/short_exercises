@@ -107,13 +107,16 @@ nav {
 		font-weight: bold;
 	}
 	& a:hover {
-		background-color: var(--accent-color);
+		color: var(--accent-color);
+		background-color: var(--primary-color);
 	}
 	& a.current {
+		background-color: var(--accent-color);
 		color: var(--dark);
 		pointer-events: none;
 	}
 	& a.current:hover {
+		background-color: var(--accent-color);
 		color: var(--dark);
 	}
 }
