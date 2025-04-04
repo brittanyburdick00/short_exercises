@@ -112,10 +112,9 @@ nav {
 	}
 	& li.current {
 		background-color: var(--accent-color);
-		color: var(--dark);
 		pointer-events: none;
 	}
-	& li.current a{
+	& a.current{
 		color: var(--dark);
 	}
 	& li.current a:hover {
