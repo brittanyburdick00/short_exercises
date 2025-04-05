@@ -86,7 +86,7 @@ ul.menu {
 		flex-basis: 20%;
 		text-align: center;
 	}
-	& a {
+	& a:hover {
 		pointer-events: none;
 	}
 	& li:has(.submenu) {
