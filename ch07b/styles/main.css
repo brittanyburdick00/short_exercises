@@ -86,9 +86,6 @@ ul.menu {
 		flex-basis: 20%;
 		text-align: center;
 	}
-	& a:hover {
-		pointer-events: none;
-	}
 	& li:has(.submenu) {
 		position: relative;
 	}
@@ -101,9 +98,13 @@ ul.menu {
 	& > li:first-child a {
 		margin-left: 0;
 	}
-	
 	& > li:last-child a {
 		margin-right: 0;
+	}
+	& a.current {
+		color: var(--accent-color);
+		font-weight: bold;
+		pointer-events: none;
 	}
 }
 ul.submenu {
