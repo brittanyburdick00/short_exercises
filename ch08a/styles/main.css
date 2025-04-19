@@ -132,7 +132,7 @@ nav {
 /* For screens more than 768px */
 @media screen and (min-width: 768px) {
 	main {
-		flex-direction: column;
+		flex-direction: row;
 		clear: left;
 		display: flex;
 	}
@@ -143,6 +143,9 @@ nav {
 	aside {
 		order: 1;
 		flex-basis: 25%;
+	}
+	nav ul {
+		flex-direction: column;
 	}
 }
 @media screen and (min-width: 694px) {
