@@ -154,29 +154,32 @@ footer {
 }
                                
 /* Base style */
-.menu-btn::before {
-	content: "\2630";
-	/* Hamburger icon */
-	font-size: 1.5em;
-	color: var(--light);
+.menu-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
 	display: block;
+	padding: 0.75em;
+	color: var(--light);
+	cursor: pointer;
 }
 
-#checkbox-toggle:checked~.menu-btn::before {
-	content: "\2716";
-	/* Close icon */
+.menu-btn::before {
+	content: "\2630"; /* Hamburger */
+	font-size: 1.5em;
 }
 
-#checkbox-toggle:checked~.menu {
-	display: flex;
+#checkbox-toggle {
+	display: none; /* Hide checkbox */
 }
 
-.menu li:has(.submenu)>a>small {
-	/* right triangle for submenu */
-	float: right;
-	content: "\25b6";
+#checkbox-toggle:checked ~ .menu {
+	display: block; /* Show menu on check */
 }
 
+#checkbox-toggle:checked ~ .menu-btn::before {
+	content: "\2716"; /* Close icon */
+}
  /* Media query for small screens (562px) */
  @media only screen and (min-width: 562px) {
 	.menu {
