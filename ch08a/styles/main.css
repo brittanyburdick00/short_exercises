@@ -148,11 +148,11 @@ nav {
 		flex-direction: column;
 	}
 	header h3 {
-		display: block;
+	
 	}
 }
 @media screen and (max-width: 694px) {
 	header h3 {
-		display: none;
+		display: block;
 	}
 }
