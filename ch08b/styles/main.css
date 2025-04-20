@@ -17,38 +17,71 @@
 /* the default styles for the elements */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-    width: 80%;
-    margin: auto;
-    border: 3px solid var(--primary-color);
+	font-size: 100%;
+	width: 80%;
+	margin: auto;
+	border: 3px solid var(--primary-color);
 }
-header, section, aside, footer { padding: 1em; }
-h1, h2, h3, p, article, blockquote { padding-bottom: .5em; }
-ul { margin-left: 1em; }
-h1 { font-size: 150%; }
-h2 { font-size: 120%; }
-h3 { font-size: 110%; }
-a:focus, a:hover { font-style: italic; }
+
+header,
+section,
+aside,
+footer {
+	padding: 1em;
+}
+
+h1,
+h2,
+h3,
+p,
+article,
+blockquote {
+	padding-bottom: .5em;
+}
+
+ul {
+	margin-left: 1em;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+}
+
+a:focus,
+a:hover {
+	font-style: italic;
+}
 
 /* the styles for the header */
 header {
 	border-bottom: 3px solid var(--primary-color);
-	background-image: linear-gradient(30deg, 
-		var(--accent-color) 0%, 
-		var(--light-accent) 25%, 
-		var(--light) 50%, 
-		var(--light-accent) 75%, 
-		var(--accent-color) 100%);
+	background-image: linear-gradient(30deg,
+			var(--accent-color) 0%,
+			var(--light-accent) 25%,
+			var(--light) 50%,
+			var(--light-accent) 75%,
+			var(--accent-color) 100%);
 	text-align: center;
+
 	& h2 {
 		font-size: 175%;
 		color: var(--primary-color);
 		padding-bottom: 0;
 	}
+
 	& h3 {
 		font-size: 130%;
 		font-style: italic;
 	}
+
 	& img {
 		float: left;
 		margin: 0 30px;
@@ -74,6 +107,7 @@ section {
 article {
 	padding-top: .5em;
 	margin-bottom: .5em;
+
 	& img {
 		float: left;
 		margin: .25em 1em 1em 0;
@@ -87,9 +121,11 @@ aside {
 	& h2 {
 		color: var(--primary-color);
 	}
+
 	& img {
 		margin-bottom: .9em;
 	}
+
 	& blockquote {
 		font-style: italic;
 		margin-left: .5em;
@@ -99,61 +135,77 @@ aside {
 /* the styles for the footer */
 footer {
 	background-color: var(--primary-color);
+
 	& p {
 		text-align: center;
 		color: white;
-		padding-bottom: 0; 
+		padding-bottom: 0;
 	}
 }
 
-/* the styles for the navigation menu */
+/* the styles for the navigation menu (Small Screens - Default) */
 .navbar {
 	background-color: var(--primary-color);
-	& ul {
-		list-style-type: none;
-		margin: 0;
-	}
-	& a {
-		display: block;
-		padding: .75em;
-		text-decoration: none;
-		color: var(--light);
-	}
-	& a.current {
-		color: var(--accent-color);
-		font-weight: bold;
-	}
-	& a.current:hover { 
-		font-style: normal; /* override hover effect */
-	}
+	position: relative;
 }
 
 .menu {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	display: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: var(--primary-color);
+	z-index: 10;
 }
 
-.menu li:has(.submenu) {
-	position: relative;
-	& small {
-		margin-left: .25em; /* add space for arrow */
-	}
-	&:hover > .submenu {
-		display: block;
-	}
+.menu li a {
+	display: block;
+	padding: 0.75em;
+	text-decoration: none;
+	color: var(--light);
+}
+
+.menu li a.current {
+	color: var(--accent-color);
+	font-weight: bold;
+}
+
+.menu li a.current:hover {
+	font-style: normal;
+}
+
+.menu li:has(.submenu) > a {
+	padding-right: 1.5em;
+}
+
+.menu li:has(.submenu) > a::after {
+	content: "\25b6";
+	float: right;
+	color: var(--light);
 }
 
 .submenu {
-	position: absolute;
-	left: 0;
-	background-color: var(--primary-color);
-	color: var(--light);
-	width: 175%;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 	display: none;
+	background-color: var(--primary-color);
+	position: static;
 }
-                               
-/* Base style */
+
+.submenu li a {
+	padding-left: 1.5em;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu li:hover > .submenu {
+	display: block;
+}
+
 .menu-btn {
 	position: absolute;
 	top: 0;
@@ -165,55 +217,83 @@ footer {
 }
 
 .menu-btn::before {
-	content: "\2630"; /* Hamburger */
+	content: "\2630";
 	font-size: 1.5em;
 }
 
 #checkbox-toggle {
-	display: none; /* Hide checkbox */
+	display: none;
 }
 
 #checkbox-toggle:checked ~ .menu {
-	display: block; /* Show menu on check */
+	display: block;
 }
 
 #checkbox-toggle:checked ~ .menu-btn::before {
-	content: "\2716"; /* Close icon */
+	content: "\2716";
 }
- /* Media query for small screens (562px) */
- @media only screen and (min-width: 562px) {
+
+/* Media query for horizontal menu (562px - wrapping point) */
+@media only screen and (min-width: 562px) {
 	.menu {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
+		position: static;
+		width: auto;
+		background-color: transparent;
 	}
 
-	.menu-btn {
-		display: none;
+	.menu li a {
+		color: var(--light);
+		padding: 0.75em;
 	}
 
-	.menu li:has(.submenu)>a>small {
+	.menu li a.current {
+		color: var(--accent-color);
+	}
+
+	.menu li:hover > a {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.menu li:has(.submenu) > a::after {
 		content: "\25bc";
+		float: none;
+		padding-left: 0.5em;
 	}
 
 	.submenu {
 		position: absolute;
-		top: 100%;
+		top: auto;
 		left: 0;
-		width: 175%;
 		display: none;
 		flex-direction: column;
-	}
-	.menu-btn {
-		display:block; /* Hide menu button */
+		background-color: var(--primary-color);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	#checkbox-toggle:checked~.menu {
+	.submenu li a {
+		padding-left: 1em;
+		border-top: none;
+	}
+
+	.menu-btn {
+		display: none;
+	}
+
+	#checkbox-toggle:checked ~ .menu {
 		display: flex;
 	}
 }
-/* the media query for the page */
+
+/* Media query for larger screens (620px - main layout) */
 @media only screen and (min-width: 620px) {
+	.submenu {
+		top: 100%;
+		border-top: none;
+	}
+
 	header {
 		text-align: left;
 	}
@@ -232,6 +312,4 @@ footer {
 		flex-basis: 25%;
 	}
 }
-
-
 
