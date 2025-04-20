@@ -202,6 +202,10 @@ footer {
 		left: 0;
 		width: 175%;
 		display: none;
+		flex-direction: column;
+	}
+	.menu-btn {
+		display:block; /* Hide menu button */
 	}
 
 	#checkbox-toggle:checked~.menu {
