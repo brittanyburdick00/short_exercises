@@ -151,7 +151,7 @@ nav {
 		display: block;
 	}
 }
-@media screen and (min-width: 694px) {
+@media screen and (max-width: 694px) {
 	header h3 {
 		display: none;
 	}
