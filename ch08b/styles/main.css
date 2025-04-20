@@ -153,6 +153,39 @@ footer {
 	display: none;
 }
 
+@media only screen and (max-width: 561px) {
+	#menu-toggle {
+	  display: none;
+	}
+  
+	.menu-btn {
+	  display: block;
+	}
+  
+	.menu {
+	  display: none;
+	  flex-direction: column;
+	  position: absolute;
+	}
+  
+	#menu-toggle:checked ~ .menu {
+	  display: flex;
+	}
+  
+	.menu li:has(.submenu) > a small::after {
+	  content: " ▶";
+	}
+  
+	.submenu {
+	  display: none;
+	  position: absolute;
+	  left: 100%;
+	}
+  
+	.menu li:has(.submenu):hover > .submenu {
+	  display: block;
+	}
+  }
 /* the media query for the page */
 @media only screen and (min-width: 620px) {
 	header {
@@ -168,6 +201,27 @@ footer {
 	aside {
 		order: 1;
 		flex-basis: 25%;
+	}
+	.menu-btn {
+		display: none;
+	}
+	.menu {
+		display: flex;
+	}
+	
+	.menu li:has(.submenu) > a small::after {
+		content: " ▼";
+	}
+	
+	.submenu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+	
+	.menu li:has(.submenu):hover > .submenu {
+		display: block;
 	}
 }
 
