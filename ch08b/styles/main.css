@@ -155,94 +155,76 @@ footer {
                                
 /* Base style */
 .menu-btn::before {
-	content: "\2630"; /* ☰ */
-  }
-  
-  .menu-btn {
-	display: none;
-	cursor: pointer;
-  }
-  
-  /* Small screens (under 562px) */
-  @media only screen and (max-width: 561px) {
-	#menu-toggle {
-	  display: none;
-	}
-  
-	.menu-btn {
-	  display: block;
-	}
-  
-	/* Switch to X when checked */
-	#menu-toggle:checked + .menu-btn::before {
-	  content: "\2716"; /* ✖ */
-	}
-  
+	content: "\2630";
+	/* Hamburger icon */
+	font-size: 1.5em;
+	color: var(--light);
+	display: block;
+}
+
+#checkbox-toggle:checked~.menu-btn::before {
+	content: "\2716";
+	/* Close icon */
+}
+
+#checkbox-toggle:checked~.menu {
+	display: flex;
+}
+
+.menu li:has(.submenu)>a>small {
+	/* right triangle for submenu */
+	float: right;
+	content: "\25b6";
+}
+
+ /* Media query for small screens (562px) */
+ @media only screen and (min-width: 562px) {
 	.menu {
-	  display: none;
-	  flex-direction: column;
-	  position: absolute;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
 	}
-  
-	#menu-toggle:checked ~ .menu {
-	  display: flex;
+
+	.menu-btn {
+		display: none;
 	}
-  
-	.has-submenu .arrow::after {
-	  content: "\25b6"; /* ▶ */
+
+	.menu li:has(.submenu)>a>small {
+		content: "\25bc";
 	}
-  
+
 	.submenu {
-	  display: none;
-	  position: absolute;
-	  left: 100%;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 175%;
+		display: none;
 	}
-  
-	.has-submenu:hover .submenu {
-	  display: block;
+
+	#checkbox-toggle:checked~.menu {
+		display: flex;
 	}
-  }
-  
-  /* Large screens (620px and up) */
-  @media only screen and (min-width: 620px) {
+}
+/* the media query for the page */
+@media only screen and (min-width: 620px) {
 	header {
 		text-align: left;
 	}
+
 	main {
 		flex-direction: row;
 	}
+
 	section {
 		order: 2;
 		flex-basis: 75%;
 	}
+
 	aside {
 		order: 1;
 		flex-basis: 25%;
 	}
-	.menu-btn {
-	  display: none;
-	}
-  
-	.menu {
-	  display: flex;
-	}
-  
-	.has-submenu .arrow::after {
-	  content: "\25bc"; /* ▼ */
-	}
-  
-	.submenu {
-	  display: none;
-	  position: absolute;
-	  top: 100%;
-	  left: 0;
-	}
-  
-	.has-submenu:hover .submenu {
-	  display: block;
-	}
-  }
-  
-/* the media query for the page */
+}
+
 
 
