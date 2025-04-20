@@ -152,67 +152,59 @@ footer {
 	width: 175%;
 	display: none;
 }
-.menu-btn {                                
-    display: block;
-    padding: 1em;
-    color: var(--light_menu); 
-	cursor: pointer;
-}
-
-@media only screen and (max-width: 561px) {
-	/* hamburger symbol */
-	.menu-btn::after { 
-    	content: "\2630";                    
-	}
-	/* checkbox is always hidden */
-	#checkbox-toggle { display: none; }    
-
-	/* when checkbox is checked, show menu and change icon */
-	#checkbox-toggle:checked ~ .menu { 
-	    display: block; 
-	}
-	#checkbox-toggle:checked ~ .menu-btn::after {
-    	content: "\2716";                    
-	}
-
-	#menu-toggle {
-		display: none;
-	  }
-	
-	  .menu-btn {
-		display: block;
-	  }
-	
-	  .menu {
-		display: none;
-		flex-direction: column;
-		position: absolute;
-	  }
-	
-	  #menu-toggle:checked ~ .menu {
-		display: flex;
-	  }
-	
-	  #menu-toggle:checked + .menu-btn::after {
-		content: " ✕";
-	  }
-	
-	  .menu li.submenu > a small::after {
-		content: "\25b6"; /* right triangle */
-	}
-	
-	  .submenu {
-		display: none;
-		position: absolute;
-		left: 100%;
-	  }
-	
-	  .menu li:has(.submenu):hover > .submenu {
-		display: block;
-	  }
+                               
+/* Base style */
+.menu-btn::before {
+	content: "\2630"; /* ☰ */
   }
-/* the media query for the page */
-@media only screen and (min-width: 620px) {
+  
+  .menu-btn {
+	display: none;
+	cursor: pointer;
+  }
+  
+  /* Small screens (under 562px) */
+  @media only screen and (max-width: 561px) {
+	#menu-toggle {
+	  display: none;
+	}
+  
+	.menu-btn {
+	  display: block;
+	}
+  
+	/* Switch to X when checked */
+	#menu-toggle:checked + .menu-btn::before {
+	  content: "\2716"; /* ✖ */
+	}
+  
+	.menu {
+	  display: none;
+	  flex-direction: column;
+	  position: absolute;
+	}
+  
+	#menu-toggle:checked ~ .menu {
+	  display: flex;
+	}
+  
+	.has-submenu .arrow::after {
+	  content: "\25b6"; /* ▶ */
+	}
+  
+	.submenu {
+	  display: none;
+	  position: absolute;
+	  left: 100%;
+	}
+  
+	.has-submenu:hover .submenu {
+	  display: block;
+	}
+  }
+  
+  /* Large screens (620px and up) */
+  @media only screen and (min-width: 620px) {
 	header {
 		text-align: left;
 	}
@@ -228,24 +220,29 @@ footer {
 		flex-basis: 25%;
 	}
 	.menu-btn {
-		display: none;
+	  display: none;
 	}
+  
 	.menu {
-		display: flex;
+	  display: flex;
 	}
-	.menu li:has(.submenu) > a small::after {
-		content: "\25bc";
+  
+	.has-submenu .arrow::after {
+	  content: "\25bc"; /* ▼ */
 	}
-	
+  
 	.submenu {
-		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
+	  display: none;
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
 	}
-	
-	.menu li:has(.submenu):hover > .submenu {
-		display: block;
+  
+	.has-submenu:hover .submenu {
+	  display: block;
 	}
-}
+  }
+  
+/* the media query for the page */
+
 
