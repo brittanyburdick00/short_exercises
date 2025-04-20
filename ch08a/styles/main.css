@@ -147,9 +147,12 @@ nav {
 	nav ul {
 		flex-direction: column;
 	}
+	header h3 {
+		display: block;
+	}
 }
 @media screen and (min-width: 694px) {
 	header h3 {
-		display: block;
+		display: none;
 	}
 }
