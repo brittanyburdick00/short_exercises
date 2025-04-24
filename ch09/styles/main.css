@@ -78,10 +78,12 @@ section {
 	& a {
 		color: var(--accent-color);
 		text-decoration: underline;
+		font-style: bold;
 	}
 	a:hover, a:focus {
 		color: var(--primary-color);
 		text-decoration: none;
+		font-style: bold;
 	}
 }
 
