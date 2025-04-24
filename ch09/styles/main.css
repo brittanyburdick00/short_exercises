@@ -68,6 +68,21 @@ section {
 	& h1 {
 		color: var(--primary-color);
 	}
+	& ul {
+		list-style-type: square;
+		padding-left: 1em;
+	}
+	& li {
+		padding: 0.5em;
+	}
+	& a {
+		color: var(--accent-color);
+		text-decoration: underline;
+	}
+	a:hover, a:focus {
+		color: var(--primary-color);
+		text-decoration: none;
+	}
 }
 
 /* the styles for the article */
