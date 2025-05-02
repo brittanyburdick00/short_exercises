@@ -114,7 +114,7 @@ aside {
 		margin-bottom: .9em;
 	}
 	& a {
-		color: color-mix(in srgb, --accent-color 65%, --primary-color 35%);
+		color: color-mix(in srgb, var(--accent-color) 65%, var(--primary-color) 35%);
 	}
 }
 
