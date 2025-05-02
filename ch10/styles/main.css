@@ -6,7 +6,10 @@
 	--light: white;
 	--dark: black;
 }
-
+@font-face {
+	font-family: "Ink Free";
+	src: url("../fonts/Inkfree.ttf") format("truetype");
+  }
 /* reset */
 * {
 	margin: 0;
@@ -24,7 +27,7 @@ body {
 }
 header, section, aside, footer { padding: 1em; }
 h1, h2, h3, p, article, blockquote { padding-bottom: .5em; }
-h1 { font-size: 150%; }
+h1 { font-size: 150%; font-family: "Ink Free"; }
 h2 { font-size: 120%; }
 h3 { font-size: 110%; }
 a:focus, a:hover { font-style: italic; }
@@ -60,6 +63,9 @@ header {
 main {
 	clear: left;
 	display: flex;
+	& a {
+		color: color-mix(in srgb, --accent-color 65%, --primary-color 35%)
+	}
 }
 
 /* the styles for the section */
@@ -94,7 +100,9 @@ article {
 		width: min(100%, 225px);
 	}
 }
-
+figure {
+	float:left;	
+}
 /* the styles for the aside */
 aside {
 	flex-basis: 25%;
