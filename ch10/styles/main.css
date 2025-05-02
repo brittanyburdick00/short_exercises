@@ -27,7 +27,7 @@ body {
 }
 header, section, aside, footer { padding: 1em; }
 h1, h2, h3, p, article, blockquote { padding-bottom: .5em; }
-h1 { font-size: 150%; font-family: "Ink Free"; }
+h1 { font-size: 150%; font-family: "Ink Free"; font-weight: bold;}
 h2 { font-size: 120%; }
 h3 { font-size: 110%; }
 a:focus, a:hover { font-style: italic; }
@@ -63,9 +63,6 @@ header {
 main {
 	clear: left;
 	display: flex;
-	& a {
-		color: color-mix(in srgb, --accent-color 65%, --primary-color 35%)
-	}
 }
 
 /* the styles for the section */
@@ -103,6 +100,10 @@ article {
 figure {
 	float:left;	
 }
+figcaption {
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}	
 /* the styles for the aside */
 aside {
 	flex-basis: 25%;
@@ -111,6 +112,9 @@ aside {
 	}
 	& img {
 		margin-bottom: .9em;
+	}
+	& a {
+		color: color-mix(in srgb, --accent-color 65%, --primary-color 35%)
 	}
 }
 
