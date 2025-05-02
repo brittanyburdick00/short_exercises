@@ -33,7 +33,7 @@ h3 { font-size: 110%; }
 a:focus, a:hover { font-style: italic; }
 ul { list-style-type: none; }
 li { padding-bottom: .75em; }
-
+a { color: color-mix(in srgb, var(--accent-color) 65%, var(--primary-color) 35%);}
 /* the styles for the header */
 header {
 	border-bottom: 3px solid var(--primary-color);
@@ -112,9 +112,6 @@ aside {
 	}
 	& img {
 		margin-bottom: .9em;
-	}
-	& a {
-		color: color-mix(in srgb, var(--accent-color) 65%, var(--primary-color) 35%);
 	}
 }
 
