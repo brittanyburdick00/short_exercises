@@ -33,12 +33,17 @@
             background-color: lightgreen;
             font-weight: bold;
         }
-
+        td {
+            border-bottom: 1.5px solid black;
+        }
         thead, table, tfoot {
             border: 1.5px solid black;
         }
         td:first-child {
             font-weight: bold;
+        }
+        td:first-child:not(:empty) {
+            border-bottom: none;
         }
         tr:nth-of-type(4), tr:nth-of-type(6) {
             border-top: 1.5px solid black;
