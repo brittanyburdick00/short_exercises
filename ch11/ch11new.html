@@ -25,26 +25,24 @@
         }
 
         th, td {
-            border: 1px solid #000;
             padding: 0.5em;
             text-align: left;
         }
 
-        th {
-            background-color: #99ee99;
+        th, tfoot {
+            background-color: lightgreen;
             font-weight: bold;
         }
 
+        thead, table, tfoot {
+            border: 1.5px solid black;
+        }
         td:first-child {
             font-weight: bold;
         }
-
-        tr:last-child {
-            background-color: #99ee99;
-            font-weight: bold;
-            text-align: right;
+        tr:nth-of-type(4), tr:nth-of-type(6) {
+            border-top: 1.5px solid black;
         }
-
         tr:last-child td:first-child {
             text-align: left;
         }
