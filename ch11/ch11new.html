@@ -1,175 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Table</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      width: 90%;
-      margin: 2em auto;
-      color: black;
-    }
+    <meta charset="UTF-8">
+    <title>Employee Table</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            width: 90%;
+            margin: 2em auto;
+            text-align: center;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
 
-    caption {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-bottom: 0.5em;
-      text-align: center;
-    }
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
 
-    th, td {
-      border: 1px solid black;
-      padding: 0.5em;
-      text-align: left;
-      color: black;
-    }
+        th, td {
+            border: 1px solid #000;
+            padding: 0.5em;
+            text-align: left;
+        }
 
-    th {
-      background-color: lightgreen;
-      font-weight: bold;
-    }
+        th {
+            background-color: #99ee99;
+            font-weight: bold;
+        }
 
-    td {
-      background-color: lightgrey;
-    }
+        td:first-child {
+            font-weight: bold;
+        }
 
-    td:first-child {
-      font-weight: bold;
-    }
+        tr:last-child {
+            background-color: #99ee99;
+            font-weight: bold;
+            text-align: right;
+        }
 
-    tfoot td {
-      background-color: lightgreen;
-      font-weight: bold;
-      text-align: right;
-    }
-
-    tfoot td:first-child {
-      text-align: left;
-    }
-
-    /* --- Responsive table styles for small screens --- */
-    @media (max-width: 640px) {
-      thead {
-        display: none;
-      }
-
-      table, tbody, tr, td {
-        display: block;
-        width: 100%;
-      }
-
-      tr {
-        margin-bottom: 1em;
-        border: 1px solid black;
-      }
-
-      td {
-        border: none;
-        border-bottom: 1px solid #ccc;
-        position: relative;
-        padding-left: 45%;
-      }
-
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 40%;
-        padding-left: 0.5em;
-        font-weight: bold;
-        background: lightgrey;
-        display: block;
-        color: black;
-      }
-
-      /* Department headers should look bold and green */
-      tr td.department {
-        background-color: lightgreen !important;
-        font-weight: bold;
-        padding-left: 0.5em;
-      }
-
-      /* Footer styling for mobile */
-      tfoot td {
-        display: block;
-        text-align: center;
-        padding: 1em;
-      }
-    }
-  </style>
+        tr:last-child td:first-child {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-  <table>
-    <caption>Employee Table</caption>
-    <thead>
-      <tr>
-        <th>Department</th>
-        <th>Name</th>
-        <th>E-mail</th>
-        <th>Years of Service</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="department" data-label="Department">Editorial</td>
-      </tr>
-      <tr>
-        <td data-label="Name">Joel Murach</td>
-        <td data-label="E-mail">joelmurach@yahoo.com</td>
-        <td data-label="Years of Service">22</td>
-      </tr>
-      <tr>
-        <td data-label="Name">Anne Boehm</td>
-        <td data-label="E-mail">anne@murach.com</td>
-        <td data-label="Years of Service">34</td>
-      </tr>
-      <tr>
-        <td data-label="Name">Zak Ruvalcaba</td>
-        <td data-label="E-mail">zak@modulemedia.com</td>
-        <td data-label="Years of Service">4</td>
-      </tr>
-      <tr>
-        <td class="department" data-label="Department">Marketing</td>
-      </tr>
-      <tr>
-        <td data-label="Name">Judy Taylor</td>
-        <td data-label="E-mail">judy@murach.com</td>
-        <td data-label="Years of Service">39</td>
-      </tr>
-      <tr>
-        <td data-label="Name">Bethany Lee</td>
-        <td data-label="E-mail">bethany@murach.com</td>
-        <td data-label="Years of Service">10</td>
-      </tr>
-      <tr>
-        <td class="department" data-label="Department">Customer Service</td>
-      </tr>
-      <tr>
-        <td data-label="Name">Kelly Slivkoff</td>
-        <td data-label="E-mail">kelly@murach.com</td>
-        <td data-label="Years of Service">25</td>
-      </tr>
-      <tr>
-        <td data-label="Name">Juliette Baylon</td>
-        <td data-label="E-mail">juliette@murach.com</td>
-        <td data-label="Years of Service">1</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="3">Total Years of Service:</td>
-        <td>105</td>
-      </tr>
-    </tfoot>
-  </table>
+    <table>
+        <caption>Employee Table</caption>
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Years of Service</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Editorial</td>
+                <td>Joel Murach</td>
+                <td>joelmurach@yahoo.com</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Anne Boehm</td>
+                <td>anne@murach.com</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Zak Ruvalcaba</td>
+                <td>zak@modulemedia.com</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Marketing</td>
+                <td>Judy Taylor</td>
+                <td>judy@murach.com</td>
+                <td>39</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Bethany Lee</td>
+                <td>bethany@murach.com</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Customer Service</td>
+                <td>Kelly Slivkoff</td>
+                <td>kelly@murach.com</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Juliette Baylon</td>
+                <td>juliette@murach.com</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total Years of Service</td>
+                <td>105</td>
+            </tr>
+        </tfoot>
+    </table>
 </body>
 </html>
+
