@@ -52,6 +52,73 @@
         tr:last-child td:first-child {
             text-align: right;
         }
+        @media (max-width: 640px) {
+            thead {
+                display: none;
+            }
+
+            table, tbody, tr, td {
+                display: block;
+                width: 100%;
+            }
+
+            tr {
+                margin-bottom: 1em;
+            }
+
+            /* Hide empty department cells */
+            td:first-child:empty {
+                display: none;
+            }
+
+            /* Department rows: lightgreen and bold */
+            td:first-child:not(:empty) {
+                background-color: lightgreen;
+                font-weight: bold;
+                padding: 0.5em;
+            }
+
+            /* Name column: lightgrey */
+            td:nth-child(2) {
+                background-color: lightgrey;
+                padding: 0.5em;
+            }
+
+            /* Email column: normal */
+            td:nth-child(3) {
+                padding: 0.5em;
+            }
+
+            /* Years of Service: display with inline label */
+            td:nth-child(4) {
+                text-align: right;
+                position: relative;
+                padding: 0.5em;
+            }
+
+            td:nth-child(4)::before {
+                content: "Years of Service: ";
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-weight: bold;
+                padding-left: 0.5em;
+                display: inline-block;
+                text-align: left;
+                width: 50%;
+            }
+
+            /* Footer styling */
+            tfoot td {
+                display: block;
+                text-align: center;
+                padding: 1em;
+                font-weight: bold;
+                background-color: lightgreen;
+                border-top: 2px solid black;
+            }
+        }
+
     </style>
 </head>
 <body>
