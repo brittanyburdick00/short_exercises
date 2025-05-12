@@ -108,7 +108,7 @@
             /* Footer styling */
             tfoot td {
                 display: block;
-                text-align: center;
+                width: 100%;
                 padding: 1em;
                 font-weight: bold;
                 background-color: lightgreen;
@@ -119,8 +119,6 @@
                 text-align: left;
                 position: relative;
                 padding: 0.5em;
-                background-color: lightgreen;
-                font-weight: bold;
             }
 
             /* Hide the actual number cell ("105") */
@@ -131,11 +129,8 @@
             /* Show the value inside the label cell */
             tfoot td[colspan="3"]::after {
                 content: "105"; 
-                position: absolute;
-                right: 0.5em;
-                top: 0;
+                float: right;
                 font-weight: normal;
-                text-align: right;
             }
 
 
