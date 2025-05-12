@@ -1,3 +1,5 @@
+/* main.css */
+
 /* variables */
 :root {
     --light: white;
@@ -32,4 +34,46 @@ input, select, button {
 }
 label {
     display: block;
+}
+
+/* ——— Added per exercise ——— */
+
+/* group framing */
+fieldset {
+    border: 1px solid black;
+    padding: .5em;
+    margin-bottom: .5em;
+}
+legend {
+    font-weight: bold;
+    padding: 0 .2em;
+}
+
+/* validation borders for required fields */
+input:required:invalid {
+    border: 2px solid red;
+}
+input:required:valid {
+    border: 2px solid green;
+}
+
+/* button base + variants */
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: .5em 1em;
+    cursor: pointer;
+    margin-right: .5em;
+}
+.btn-submit {
+    background-color: green;
+    color: white;
+}
+.btn-reset {
+    background-color: red;
+    color: white;
+}
+.btn-submit:hover,
+.btn-reset:hover {
+    opacity: 0.8;
 }
