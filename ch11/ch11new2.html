@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee table</title>
+  <style>
+    /* ———————————— WIDE SCREEN (base styles) ———————————— */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100%;
+      width: 80%;
+      margin: 1em auto;
+    }
+    table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 100%;
+    }
+    caption {
+      caption-side: top;
+      text-align: center;
+      font-weight: bold;
+      padding: .5em 0;
+    }
+    thead {
+      background-color: lightgreen;
+    }
+    th, td {
+      border: none;
+      padding: .35em 1em .35em .5em;
+      text-align: left;
+      vertical-align: middle;
+    }
+    thead th {
+      border-bottom: 2px solid black;
+    }
+    tbody td:not(:first-child) {
+      border-bottom: 1px solid #999;
+    }
+    tbody tr:nth-child(4) td,
+    tbody tr:nth-child(6) td {
+      border-top: 2px solid #999;
+    }
+    tbody td:last-child {
+      text-align: right;
+    }
+    /* footer (wide) */
+    tfoot {
+      background-color: lightgreen;
+    }
+    tfoot tr {
+      border-top: 2px solid black;
+    }
+    tfoot td {
+      border: none;
+      padding: .35em 1em .35em .5em;
+      font-weight: bold;
+    }
+    tfoot td:nth-child(2) {
+      text-align: left;
+    }
+    tfoot td:nth-child(3) {
+      text-align: right;
+    }
+
+    /* ———————————— NARROW SCREEN (≤640px) ———————————— */
+    @media only screen and (max-width: 640px) {
+      thead { display: none; }
+      tr { display: block; margin: 0; }
+      td {
+        display: block;
+        border: 1px solid black;
+        margin: 0;
+        padding: .35em .5em;
+      }
+      /* department headers */
+      tbody tr td:first-child:not(:empty) {
+        background-color: lightgreen;
+        font-weight: bold;
+      }
+      tbody tr td:first-child:not(:empty) ~ td {
+        display: none;
+      }
+      tbody td:first-child:empty {
+        display: none;
+      }
+      /* name grey */
+      tbody td:nth-of-type(2) {
+        background-color: lightgrey;
+      }
+      /* years label/value */
+      tbody td:nth-of-type(4) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      tbody td:nth-of-type(4)::before {
+        content: "Years of Service:";
+        font-weight: bold;
+        margin-right: 1em;
+      }
+
+      /* ——— NARROW FOOTER FIX ——— */
+      tfoot tr {
+        display: block;
+        margin: 0;               /* remove extra gap */
+      }
+      /* hide the first two footer cells */
+      tfoot td:not(:last-child) {
+        display: none;
+      }
+      /* single footer cell as flex box */
+      tfoot td:last-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        margin: 0;               /* flush with above row */
+        padding: .35em .5em;
+        background-color: lightgreen;
+        font-weight: bold;
+        border-top: none;        /* remove double-line */
+      }
+      tfoot td:last-child::before {
+        content: "Total Years of Service";
+        margin-right: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <caption>Employee Table</caption>
+    <thead>
+      <tr>
+        <th>Department</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Years of Service</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Editorial</td>
+        <td>Joel Murach</td>
+        <td>joelmurach@yahoo.com</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Anne Boehm</td>
+        <td>anne@murach.com</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Zak Ruvalcaba</td>
+        <td>zak@modulemedia.com</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>Marketing</td>
+        <td>Judy Taylor</td>
+        <td>judy@murach.com</td>
+        <td>39</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Bethany Lee</td>
+        <td>bethany@murach.com</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>Customer Service</td>
+        <td>Kelly Slivkoff</td>
+        <td>kelly@murach.com</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Juliette Baylon</td>
+        <td>juliette@murach.com</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"></td>
+        <td>Total Years of Service</td>
+        <td>105</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
