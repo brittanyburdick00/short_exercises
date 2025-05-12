@@ -114,25 +114,30 @@
                 background-color: lightgreen;
                 border-top: 2px solid black;
             }
-            /* Show tfoot cells side-by-side */
-            tfoot tr {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            tfoot td {
-                display: inline-block;
-                width: auto;
+            /* Style the colspan cell to mimic inline label + value */
+            tfoot td[colspan="3"] {
                 text-align: left;
+                position: relative;
                 padding: 0.5em;
+                background-color: lightgreen;
+                font-weight: bold;
             }
 
-            /* Optional: align the last value right */
+            /* Hide the actual number cell ("105") */
             tfoot td:last-child {
-                flex-grow: 1;
+                display: none;
+            }
+
+            /* Show the value inside the label cell */
+            tfoot td[colspan="3"]::after {
+                content: "105"; 
+                position: absolute;
+                right: 0.5em;
+                top: 0;
+                font-weight: normal;
                 text-align: right;
             }
+
 
         }
 
