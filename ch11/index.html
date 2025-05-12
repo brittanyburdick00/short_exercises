@@ -1,98 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee table</title>
-	<style>
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-            font-size: 100%;
-			width: 80%;
-			margin: 1em auto;
-		}
-		table {
-			border-collapse: collapse;
-			border: 1px solid black;
-		}
-		caption {
-			font-weight: bold;
-			font-size: 1.2em;
-			margin: 0.5em 0;
-		}
-		thead {
-			background-color: lightgreen;
-		}
-		th, td {
-			border: 1px solid black;
-			padding: .35em 1em .35em .5em;
-			text-align: left;
-			vertical-align: middle;
-		}
-		tbody tr:nth-child(even) td {
-			background-color: lightgrey;
-		}
-		tfoot td {
-			font-weight: bold;
-			background-color: lightgreen;
-    	}
+    <meta charset="UTF-8">
+    <title>Employee Table</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            width: 90%;
+            margin: 2em auto;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1.5px solid black;
+        }
+        caption {
+            caption-side: top;
+            text-align: center;
+            font-weight: bold;
+            padding: .5em 0;
+        }
+        thead {
+            background-color: lightgreen;
+        }
+        th, td {
+            border: none;
+            padding: .35em 1em .35em .5em;
+            text-align: left;
+            vertical-align: middle;
+        }
+        thead th {
+            border-bottom: 2px solid black;
+        }
+        tbody td:not(:first-child) {
+            border-bottom: 1.5px solid black;
+        }
+        tbody tr:nth-child(4) td,
+        tbody tr:nth-child(6) td {
+            border-top: 2px solid black;
+        }
         tbody td:last-child {
             text-align: right;
         }
-		/* Responsive styles */
-		@media (max-width: 640px) {
-		table, thead, tbody, th, td, tr {
-			display: block;
-			width: 100%;
-      	}
+        /* footer (wide) */
+        tfoot {
+            background-color: lightgreen;
+        }
+        tfoot tr {
+            border-top: 2px solid black;
+        }
+        tfoot td {
+            border: none;
+            padding: .35em 1em .35em .5em;
+            font-weight: bold;
+        }
+        tfoot td:nth-child(2) {
+            text-align: left;
+        }
+        tfoot td:nth-child(3) {
+            text-align: right;
+        }
 
-      	thead {
-        	display: none;
-      	}
-
-		tr {
-			margin-bottom: 1em;
-			border: 1px solid black;
-		}
-
-		td {
-			border: none;
-			border-bottom: 1px solid #ccc;
-			padding-left: 45%;
-			position: relative;
-			background-color: white;
-		}
-
-		td::before {
-			content: attr(data-label);
-			position: absolute;
-			left: 0.5em;
-			top: 0;
-			bottom: 0;
-			width: 40%;
-			padding-top: 0.35em;
-			padding-bottom: 0.35em;
-			font-weight: bold;
-			display: block;
-		}
-
-		td[colspan] {
-			text-align: left;
-			padding-left: 0.5em;
-			background-color: lightgreen;
-			font-weight: bold;
-		}
-
-		tfoot td {
-			text-align: left;
-			padding-left: 0.5em;
-		}
-    }
-	</style>
+        @media only screen and (max-width: 640px) {
+            thead { display: none; }
+            tr { display: block; margin: 0; }
+            td {
+                display: block;
+                border: 1px solid black;
+                margin: 0;
+                padding: .35em .5em;
+            }
+            /* department headers */
+            tbody tr td:first-child:not(:empty) {
+                background-color: lightgreen;
+                font-weight: bold;
+            }
+            tbody td:first-child:empty {
+                display: none;
+            }
+            /* name grey */
+            tbody td:nth-of-type(2) {
+                background-color: lightgrey;
+            }
+            /* years label/value */
+            tbody td:nth-of-type(4) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            tbody td:nth-of-type(4)::before {
+                content: "Years of Service:";
+                font-weight: bold;
+                margin-right: 1em;
+            }
+            tfoot tr {
+                display: block;
+                margin: 0;              
+            }
+            /* hide the first two footer cells */
+            tfoot td:not(:last-child) {
+                display: none;
+            }
+            /* single footer cell as flex box */
+            tfoot td:last-child {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid black;
+                margin: 0;               /* flush with above row */
+                padding: .35em .5em;
+                background-color: lightgreen;
+                font-weight: bold;
+                border-top: none;        /* remove double-line */
+            }
+            tfoot td:last-child::before {
+                content: "Total Years of Service";
+                margin-right: 1em;
+            }
+        }
+    </style>
 </head>
-
 <body>
-	<table>
+    <table>
         <caption>Employee Table</caption>
         <thead>
             <tr>
