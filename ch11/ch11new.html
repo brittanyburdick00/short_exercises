@@ -56,16 +56,15 @@
             thead {
                 display: none;
             }
-
+            caption {
+                display: contents;
+            }
             table, tbody, tr, td {
                 display: block;
-                width: 100%;
             }
-
-            tr {
-                margin-bottom: 1em;
+            table, td {
+                border: 1.5px solid black;
             }
-
             /* Hide empty department cells */
             td:first-child:empty {
                 display: none;
@@ -100,8 +99,6 @@
                 content: "Years of Service: ";
                 position: absolute;
                 left: 0;
-                top: 0;
-                font-weight: bold;
                 padding-left: 0.5em;
                 display: inline-block;
                 text-align: left;
