@@ -114,6 +114,26 @@
                 background-color: lightgreen;
                 border-top: 2px solid black;
             }
+            /* Show tfoot cells side-by-side */
+            tfoot tr {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            tfoot td {
+                display: inline-block;
+                width: auto;
+                text-align: left;
+                padding: 0.5em;
+            }
+
+            /* Optional: align the last value right */
+            tfoot td:last-child {
+                flex-grow: 1;
+                text-align: right;
+            }
+
         }
 
     </style>
