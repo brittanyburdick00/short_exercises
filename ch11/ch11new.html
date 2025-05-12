@@ -119,30 +119,29 @@
                 border-top: 2px solid black;
                 box-sizing: border-box;
             }
+
             /* Style the colspan cell to mimic inline label + value */
             tfoot td[colspan="3"] {
-                text-align: left;
-                position: relative;
-                padding: 0.5em;
+                display: none;
             }
 
             /* Hide the actual number cell ("105") */
             tfoot td:last-child {
-                display: none;
+                background-color: lightgreen;
+                text-align: right;
+                position: relative;
+                padding: 0.5em;
             }
-
-            /* Show the value inside the label cell */
-            tfoot td[colspan="3"]::after {
-                content: "105"; 
+            tfoot td:last-child::before {
+                content: "Total Years of Service: ";
+                font-weight: bold;
                 position: absolute;
-                right: 0;
+                left: 0;
                 padding-left: 0.5em;
                 display: inline-block;
-                text-align: right;
+                text-align: left;
                 width: 50%;
-            }
-
-
+            }    
         }
 
     </style>
