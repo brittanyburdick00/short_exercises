@@ -11,135 +11,118 @@
             margin: 2em auto;
             text-align: center;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1em;
-        }
-
-        caption {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 0.5em;
-        }
-
-        th, td {
-            padding: 0.5em;
-            text-align: left;
-        }
-
-        th, tfoot {
-            background-color: lightgreen;
-            font-weight: bold;
-        }
-        td {
-            border-bottom: 1.5px solid black;
-        }
-        thead, table, tfoot {
             border: 1.5px solid black;
         }
-        td:first-child {
+        caption {
+            caption-side: top;
+            text-align: center;
             font-weight: bold;
-            border-bottom: none;
+            padding: .5em 0;
         }
-        td:first-child:empty {
-            border-bottom: none;
+        thead {
+            background-color: lightgreen;
         }
-        tr:nth-of-type(4), tr:nth-of-type(6) {
-            border-top: 1.5px solid black;
+        th, td {
+            border: none;
+            padding: .35em 1em .35em .5em;
+            text-align: left;
+            vertical-align: middle;
         }
-        tr td:last-child {
+        thead th {
+            border-bottom: 2px solid black;
+        }
+        tbody td:not(:first-child) {
+            border-bottom: 1px solid #999;
+        }
+        tbody tr:nth-child(4) td,
+        tbody tr:nth-child(6) td {
+            border-top: 2px solid #999;
+        }
+        tbody td:last-child {
+            text-align: right;
+        }
+        /* footer (wide) */
+        tfoot {
+            background-color: lightgreen;
+        }
+        tfoot tr {
+            border-top: 2px solid black;
+        }
+        tfoot td {
+            border: none;
+            padding: .35em 1em .35em .5em;
+            font-weight: bold;
+        }
+        tfoot td:nth-child(2) {
+            text-align: left;
+        }
+        tfoot td:nth-child(3) {
             text-align: right;
         }
 
-        tr:last-child td:first-child {
-            text-align: right;
-        }
-        @media (max-width: 640px) {
-            thead {
-                display: none;
-            }
-            caption {
-                display: contents;
-            }
-            table, tbody, tr, td {
+        @media only screen and (max-width: 640px) {
+            thead { display: none; }
+            tr { display: block; margin: 0; }
+            td {
                 display: block;
+                border: 1px solid black;
+                margin: 0;
+                padding: .35em .5em;
             }
-            table, td {
-                border: 1.5px solid black;
-            }
-            /* Hide empty department cells */
-            td:first-child:empty {
-                display: none;
-            }
-
-            /* Department rows: lightgreen and bold */
-            td:first-child:not(:empty) {
+            /* department headers */
+            tbody tr td:first-child:not(:empty) {
                 background-color: lightgreen;
                 font-weight: bold;
-                padding: 0.5em;
             }
-
-            /* Name column: lightgrey */
-            td:nth-child(2) {
+            tbody tr td:first-child:not(:empty) ~ td {
+                display: none;
+            }
+            tbody td:first-child:empty {
+                display: none;
+            }
+            /* name grey */
+            tbody td:nth-of-type(2) {
                 background-color: lightgrey;
-                padding: 0.5em;
             }
-
-            /* Email column: normal */
-            td:nth-child(3) {
-                padding: 0.5em;
+            /* years label/value */
+            tbody td:nth-of-type(4) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
-
-            /* Years of Service: display with inline label */
-            td:nth-child(4) {
-                text-align: right;
-                position: relative;
-                padding: 0.5em;
-            }
-
-            td:nth-child(4)::before {
-                content: "Years of Service: ";
-                position: absolute;
-                left: 0;
-                padding-left: 0.5em;
-                display: inline-block;
-                text-align: left;
-                width: 50%;
-            }
-
-            /* Footer styling */
-            tfoot td {
-                display: block;
-                width: 100%;
-                padding: 1em;
+            tbody td:nth-of-type(4)::before {
+                content: "Years of Service:";
                 font-weight: bold;
-                background-color: lightgreen;
-                border-top: 2px solid black;
+                margin-right: 1em;
             }
-
-            /* Style the colspan cell to mimic inline label + value */
-            tfoot td[colspan="3"] {
+            tfoot tr {
+                display: block;
+                margin: 0;              
+            }
+            /* hide the first two footer cells */
+            tfoot td:not(:last-child) {
                 display: none;
             }
-
+            /* single footer cell as flex box */
             tfoot td:last-child {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid black;
+                margin: 0;               /* flush with above row */
+                padding: .35em .5em;
                 background-color: lightgreen;
-                text-align: right;
-                position: relative;
-                padding: 0.5em;
+                font-weight: bold;
+                border-top: none;        /* remove double-line */
             }
             tfoot td:last-child::before {
-                content: "Total Years of Service: ";
-                font-weight: bold;
-                left: 0;
-                padding-left: 0.5em;
-                text-align: left;
-                width: 50%;
-            }    
+                content: "Total Years of Service";
+                margin-right: 1em;
+            }
         }
-
     </style>
 </head>
 <body>
