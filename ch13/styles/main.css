@@ -78,6 +78,13 @@ article {
 		border: 1px solid var(--dark);
 		width: min(100%, 480px);
 	}
+	& video.float-left {
+		float: left;
+		margin: .25em 1em 1em 0;
+		border: 1px solid var(--dark);
+		width: min(100%, 480px);
+	}
+	
 }
 
 /* the styles for the aside */
