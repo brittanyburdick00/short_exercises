@@ -21,6 +21,14 @@ body {
     width: 80%;
     margin: auto;
     border: 3px solid var(--primary-color);
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto auto auto;
+	grid-template-areas:
+		"header header header header header header header header header header header header"
+		"aside-left aside-left aside-left section section section section section section aside-right aside-right aside-right"
+		"footer footer footer footer footer footer footer footer footer footer footer footer";
+	gap: 1em;
 }
 header, section, aside, footer { padding: 1em; }
 h1, h2, h3, p, article, blockquote { padding-bottom: .5em; }
@@ -32,6 +40,7 @@ a:focus, a:hover { font-style: italic; }
 
 /* the styles for the header */
 header {
+	grid-area: header;
 	border-bottom: 3px solid var(--primary-color);
 	background-image: linear-gradient(30deg, 
 		var(--accent-color) 0%, 
@@ -57,6 +66,7 @@ header {
 
 /* the styles for the section */
 section {
+	grid-area: section;
 	& h1 {
 		padding-top: .5em;
 	}
@@ -96,9 +106,19 @@ aside {
 		margin-bottom: .9em;
 	}
 }
+aside:first-of-type {
+	grid-area: aside-left;
+	padding: 1em;
+}
+
+aside:last-of-type {
+	grid-area: aside-right;
+	padding: 1em;
+}
 
 /* the styles for the footer */
 footer {
+	grid-area: footer;
 	background-color: var(--primary-color);
 	& p {
 		text-align: center;
